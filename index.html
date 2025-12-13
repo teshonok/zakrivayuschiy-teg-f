@@ -42,13 +42,13 @@
             <button class="card__icon-button">
               <img class="like-icon" src="./svg/heart in paths.svg" alt="" />
             </button>
-            <button class="card__like-button">
+            <button class="button card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </article>
 
-        <article class="card">
+        <article class="container card">
           <h3 class="card__title">
             1 спринт: Я — чистый лист
           </h3>
@@ -72,7 +72,7 @@
             <button class="card__icon-button">
               <img class="like-icon" src="./svg/heart in paths.svg" alt="" />
             </button>
-            <button class="card__like-button">
+            <button class="button card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -100,7 +100,7 @@
             <button class="card__icon-button">
               <img class="like-icon" src="./svg/heart in paths.svg" alt="" />
             </button>
-            <button class="card__like-button">
+            <button class="button card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -130,7 +130,7 @@
             <button class="card__icon-button">
               <img class="like-icon" src="./svg/heart in paths.svg" alt="" />
             </button>
-            <button class="card__like-button">
+            <button class="button card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -161,7 +161,7 @@
             <button class="card__icon-button">
               <img class="like-icon" src="./svg/heart in paths.svg" alt="" />
             </button>
-            <button class="card__like-button">
+            <button class="button card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -189,7 +189,7 @@
             <button class="card__icon-button">
               <img class="like-icon" src="./svg/heart in paths.svg" alt="" />
             </button>
-            <button class="card__like-button">
+            <button class="button card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -219,7 +219,7 @@
             <button class="card__icon-button">
               <img class="like-icon" src="./svg/heart in paths.svg" alt="" />
             </button>
-            <button class="card__like-button">
+            <button class="button card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -250,11 +250,38 @@
             <button class="card__icon-button">
               <img class="like-icon" src="./svg/heart in paths.svg" alt="" />
             </button>
-            <button class="card__like-button">
+            <button class="button card__like-button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </article>
+
+        <div class="save__button-container">
+        <button 
+        type="button"
+        onclick="window['floppy-id'].showModal();"
+        aria-controls="floppy-id"
+        class="button save__button">
+          <svg class="save__button-image" viewBox="0 0 39 39">
+            <use href="./svg/floppy.svg#floppy">
+            </svg>
+          <span class="button__text">Сохранить на память</span>
+        </button>
+        </div>
+        <dialog class="popup" id="floppy-id">
+          <div class="popup__container">
+          <svg class="popup-image" viewBox="0 0 39 39">
+            <use href="./svg/floppy.svg#floppy">
+            </svg>
+          <p class="popup__text">
+          Вставьте дискету, чтобы продолжить
+        </p>
+        </div>
+        <button class="button popup__button" type="button"
+        onclick="window['floppy-id'].close();">
+        <span class="button__text">ок</span>
+      </button>
+        </dialog>
       </section>
     </main>
     <script src="./scripts/like.js"></script>

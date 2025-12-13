@@ -102,6 +102,13 @@
   }
 }
 
+.button {
+  font-family: var(--accent-font), monospace;
+  font-size: var(--acent-font-size-button);
+  background-color: #fff;
+  border: var(--main-border);
+}
+
 .card__text-container {
   display: flex;
   flex-direction: column;
@@ -122,9 +129,63 @@
 }
 
 .card__like-button {
-  font-family: var(--accent-font), monospace;
   padding: 12.5px 37px;
+  line-height: 90%;
+}
+
+.save__button-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.save__button {
+  padding: 17px 20px;
+}
+
+.save__button-image {
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  inline-size: clamp(21.3125rem, 21.0477rem + 1.13vw, 22.0625rem);
+  display: none;
+}
+
+.popup[open] {
+  display: flex;
+}
+
+.popup::backdrop {
+  background-color: #000;
+  opacity: 75%;
+}
+
+.popup__container {
+  display: flex;
+  gap: 20px;
+}
+
+.popup__text {
+  font-family: var(--accent-font), monospace;
+  line-height: 150%;
+  text-transform: uppercase;
   font-size: var(--acent-font-size-button);
-  background-color: transparent;
-  border: var(--main-border);
+}
+
+.popup-image {
+  inline-size: 39px;
+  block-size: 39px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.popup__button {
+  padding: 12.5px 132.5px;
+  text-transform: uppercase;
 }
