@@ -13,4 +13,118 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--main-font-text-weight);
+  background-image: var(--cover-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 100px 370px;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.container {
+  width: var(--block-width);
+  margin: 0 auto;
+}
+
+.header {
+  font-family: var(--accent-font), monospace;
+  background-color: #fff;
+  padding-block: clamp(122px, 119.18px + 0.7512vw, 130px);
+  padding-inline: clamp(16px, -21.5px + 10vw, 122.5px);
+  border: var(--main-border);
+  margin-block-end: 98px;
+  margin-block-start: 100px;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-align: center;
+  padding-block-start: 20px;
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: #fff;
+  font-size: var(--main-font-size);
+  border: var(--main-border);
+}
+
+.card__title {
+  font-variation-settings: 'wght' var(--main-font-title-weight);
+  padding: 4px 10px;
+  font-size: var(--main-font-size);
+}
+
+.card__image-container {
+  position: relative;
+}
+
+.card__image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.card__image-watermark {
+  font-family: var(--accent-font), monospace;
+  font-size: var(--accent-font-size-watermark);
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow:  
+  -1px 0 #fff, 
+  0 1px #fff, 
+  1px 0 #fff, 
+  0 -1px #fff;
+  -webkit-text-stroke: 1px #fff;
+}
+
+@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .card__image-watermark {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow: none;
+  }
+}
+
+.card__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+.card__button-container {
+  display: flex;
+  justify-content: end;
+  padding: 25px;
+  gap: 12px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.card__like-button {
+  font-family: var(--accent-font), monospace;
+  padding: 12.5px 37px;
+  font-size: var(--acent-font-size-button);
+  background-color: transparent;
+  border: var(--main-border);
 }
