@@ -19,9 +19,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding: 100px 370px;
   margin: 0;
-  padding: 0;
+  padding: 100px 0;
 }
 
 .content {
@@ -42,7 +41,6 @@
   padding-inline: clamp(16px, -21.5px + 10vw, 122.5px);
   border: var(--main-border);
   margin-block-end: 98px;
-  margin-block-start: 100px;
 }
 
 .header__title {
@@ -103,10 +101,40 @@
 }
 
 .button {
+  position: relative;
   font-family: var(--accent-font), monospace;
   font-size: var(--acent-font-size-button);
   background-color: #fff;
+  color: white;
   border: var(--main-border);
+  transition: box-shadow .3s ease;
+  overflow: hidden;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  background-color: #000;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.button:hover::after {
+  transform: translateX(0);
+}
+
+.button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
 }
 
 .card__text-container {
@@ -125,7 +153,16 @@
 
 .card__icon-button {
   background-color: transparent;
-  border: none;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: black;
 }
 
 .card__like-button {
@@ -146,6 +183,9 @@
 .save__button-image {
   inline-size: 21px;
   block-size: 21px;
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 1;
 }
 
 .popup {
@@ -188,4 +228,17 @@
 .popup__button {
   padding: 12.5px 132.5px;
   text-transform: uppercase;
+}
+
+.sparks {
+  opacity: 100%;
+}
+
+@media (width <= 375px) {
+  .save__button-content {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 8px;
+  }
 }
