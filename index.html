@@ -19,7 +19,7 @@
       <h2 class="header__subtitle">закрывающий тег</h2>
     </header>
     <main>
-      <section class="container content">
+      <div class="container content">
         <article class="card">
           <h3 class="card__title">
             Фритрек и нулевой спринт: Подготовка к работе
@@ -521,14 +521,12 @@
             aria-controls="floppy-id"
             class="button save__button"
           >
-            <div class="save__button-content">
               <svg class="save__button-image" viewBox="0 0 39 39">
                 <use href="./svg/floppy.svg#floppy"></use>
               </svg>
               <span class="button__text">Сохранить на память</span>
+            </button>
             </div>
-          </button>
-        </div>
         <dialog class="popup" id="floppy-id">
           <div class="popup__container">
             <svg class="svg-image popup-image" viewBox="0 0 39 39">
@@ -544,7 +542,7 @@
             <span class="button__text">ок</span>
           </button>
         </dialog>
-      </section>
+      </div>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
