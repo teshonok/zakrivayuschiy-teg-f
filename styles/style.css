@@ -26,7 +26,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 52px;
+  gap: 51px;
 }
 
 .container {
@@ -36,11 +36,11 @@
 
 .header {
   font-family: var(--accent-font), monospace;
-  background-color: #fff;
+  background-color: var(--main-color);
   padding-block: clamp(122px, 119.18px + 0.7512vw, 130px);
   padding-inline: clamp(16px, -21.5px + 10vw, 122.5px);
   border: var(--main-border);
-  margin-block-end: 98px;
+  margin-block-end: 95px;
 }
 
 .header__title {
@@ -55,7 +55,7 @@
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--main-color);
   font-size: var(--main-font-size);
   border: var(--main-border);
 }
@@ -71,7 +71,6 @@
 }
 
 .card__image {
-  object-fit: contain;
   width: 100%;
   height: 100%;
 }
@@ -85,17 +84,17 @@
   opacity: 0.5;
   mix-blend-mode: hard-light;
   text-shadow:  
-  -1px 0 #fff, 
-  0 1px #fff, 
-  1px 0 #fff, 
-  0 -1px #fff;
-  -webkit-text-stroke: 1px #fff;
+  -1px 0 var(--main-color), 
+  0 1px var(--main-color), 
+  1px 0 var(--main-color), 
+  0 -1px var(--main-color);
+  -webkit-text-stroke: 1px var(--main-color);
 }
 
-@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+@supports((text-stroke: 1px var(--main-color)) or (-webkit-text-stroke: 1px var(--main-color))) {
   .card__image-watermark {
-    -webkit-text-stroke: 1px #fff;
-    text-stroke: 1px #fff;
+    -webkit-text-stroke: 1px var(--main-color);
+    text-stroke: 1px var(--main-color);
     text-shadow: none;
   }
 }
@@ -104,8 +103,8 @@
   position: relative;
   font-family: var(--accent-font), monospace;
   font-size: var(--acent-font-size-button);
-  background-color: #fff;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--main-color);
   border: var(--main-border);
   transition: box-shadow .3s ease;
   overflow: hidden;
@@ -113,13 +112,13 @@
 
 .button:focus-visible {
   outline: none;
-  box-shadow: 2px 2px 0 #000;
+  box-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .button::after {
   content: '';
   position: absolute;
-  background-color: #000;
+  background-color: var(--accent-color);
   inset: 0;
   width: 100%;
   height: 100%;
@@ -141,20 +140,20 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 25px;
+  padding: 21px 25px 0;
 }
 
 .card__button-container {
   display: flex;
   justify-content: end;
-  padding: 25px;
-  gap: 12px;
+  padding: 24px 25px 25px 25px;
 }
 
 .card__icon-button {
   background-color: transparent;
   border: 2px solid transparent;
   transition: border 0.3s ease;
+  height: 39px;
 }
 
 .card__icon-button:focus {
@@ -162,22 +161,22 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: black;
+  border-color: var(--accent-color);
 }
 
 .card__like-button {
-  padding: 12.5px 37px;
-  line-height: 90%;
+  padding: 10.5px 35px;
+  height: 100%;
 }
 
 .save__button-container {
   display: flex;
-  gap: 8px;
   justify-content: center;
 }
 
 .save__button {
-  padding: 17px 20px;
+  padding: 15px 17px;
+  height: 100%;
 }
 
 .save__button-image {
@@ -202,7 +201,7 @@
 }
 
 .popup::backdrop {
-  background-color: #000;
+  background-color: var(--accent-color);
   opacity: 75%;
 }
 
@@ -251,12 +250,12 @@
 }
 
 .like-icon:hover .core {
-  fill: black;
+  fill: var(--accent-color);
   transition: .3s linear 0;
 }
 
 .like-icon:hover .main-body {
-  fill: black;
+  fill: var(--accent-color);
   transition: fill .3s linear .05;
 }
 
@@ -293,11 +292,72 @@
   transform-origin: center;
 }
 
+.save__button-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card__image-1 {
+  filter: sepia(34%) hue-rotate(250deg);
+}
+
+.card__image-2 {
+  filter: invert(70%) saturate(490%);
+}
+
+.card__image-3 {
+  filter: hue-rotate(-50deg);
+}
+
+.card__image-4 {
+  filter: sepia(1) hue-rotate(-50deg) saturate(2);
+}
+
+.card__image-5 {
+  filter: hue-rotate(0.5turn);
+}
+
+.card__image-6 {
+  filter: sepia(0.6);
+}
+
+.card__image-7 {
+  filter: invert(90%);
+}
+
+.card__image-8 {
+  filter: grayscale(100%);
+}
+
 @media (width <= 375px) {
   .save__button-content {
-    display: flex;
     flex-direction: column;
-    align-items:center;
-    gap: 8px;
+    gap: 8px; 
+  }
+
+  .save__button {
+    padding: 12px 18px;
+  }
+
+  .header {
+    margin-block-end: 100px;
+  }
+
+  .card__title {
+    padding: 0px 10px 8px;
+  }
+
+  .save__button-image {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .card__button-container {
+    padding: 25px;
+  }
+
+  .content {
+    gap: 52px;
   }
 }

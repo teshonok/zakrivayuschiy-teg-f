@@ -13,6 +13,8 @@
   linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
   --block-width: clamp(375px, 260.565px + 30.516vw, 700px);
   --main-border: 2px solid black;
+  --accent-color: #000;
+  --main-color: #fff;
   --animation-contour-color: black;
   --animation-fill-color: red;
   --animation-sparkle-color: red;
